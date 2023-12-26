@@ -79,3 +79,44 @@ add_action('wp_footer', 'checkUser_arya_role');
 
 add_shortcode("my_shortcode", "my_shortcode_function");
 
+function my_plugin_menu() {
+    add_menu_page(
+        'My Plugin',
+        'My Plugin',
+        'manage_options',
+        'my-plugin',
+        'my_plugin_page'
+    );
+
+    add_submenu_page(
+        'my-plugin',
+        'Submenu Page 1',
+        'Submenu 1',
+        'manage_options',
+        'my-plugin-submenu-1',
+        'my_plugin_submenu_1'
+    );
+
+    add_submenu_page(
+        'my-plugin',
+        'Submenu Page 2',
+        'Submenu 2',
+        'manage_options',
+        'my-plugin-submenu-2',
+        'my_plugin_submenu_2'
+    );
+}
+
+function my_plugin_page() {
+    echo '<div class="wrap"><h2>Main Plugin Page</h2></div>';
+}
+
+function my_plugin_submenu_1() {
+    echo '<div class="wrap"><h2>Submenu 1 Page</h2></div>';
+}
+
+function my_plugin_submenu_2() {
+    echo '<div class="wrap"><h2>Submenu 2 Page</h2></div>';
+}
+
+add_action('admin_menu', 'my_plugin_menu');
