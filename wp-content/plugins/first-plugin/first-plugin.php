@@ -21,7 +21,7 @@ You should have received a copy of the GNU General Public License
 along with {Plugin Name}. If not, see {License URI}.
 */
 
-
+require_once "functions.php";
 /**
  * Register the "book" custom post type.
  */
@@ -79,13 +79,3 @@ add_action('wp_footer', 'checkUser_arya_role');
 
 add_shortcode("my_shortcode", "my_shortcode_function");
 
-
-function my_shortcode_function($atts = array(), $content = null) {
-    
-    $modified_content = strtoupper($content);
-
-    return $modified_content;
-}
-
-
-[my_shortcode]This is the test sentence[/my_shortcode];
