@@ -66,8 +66,7 @@ function  checkUser_arya_role(){
     if(is_user_logged_in()){
         $user = wp_get_current_user();
         $roles = (array) $user->roles;
-        echo "My user ID is: " . $user->id;
-
+        echo "My user ID is: " . $user->ID;
     }
     else{
         echo "No User";
