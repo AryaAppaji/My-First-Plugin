@@ -11,4 +11,6 @@
             `name` VARCHAR(30),
             `email` VARCHAR(50)
         )");
+        
+        mysqli_close($conn);
     }
