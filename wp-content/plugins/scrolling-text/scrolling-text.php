@@ -4,6 +4,9 @@
      * Version: 1.0
      * Author: Arya Appaji
      */
+    if(!defined('ABSPATH')){
+        die;
+    }
     function activate(){
         flush_rewrite_rules();
     }
