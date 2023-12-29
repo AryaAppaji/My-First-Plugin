@@ -1,6 +1,7 @@
 <?php
     /**
      * Plugin Name: ScrollingText
+     * Description: This plugin will display a scrolling text at the bottom of the page.
      * Version: 1.0
      * Author: Arya Appaji
      */
