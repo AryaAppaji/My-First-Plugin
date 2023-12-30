@@ -9,7 +9,6 @@ function displayForm(){
         }
     </style>
     <div>
-        <h1>Basic Form</h1>
         <form action="" method="POST">
             <label for="name">Name</label>
             <input type="text" id="name" name="Name" placeholder="Enter Name" required autocomplete="off"><br><br>
