@@ -1,7 +1,7 @@
 <?php
     /**
      * Plugin Name: Test GET SPECIFIC API
-     * Description: This is used to test the GET API
+     * Description: This is used to test the GET Specific API
      * Author: Arya Appaji
      * Version: 1.0
      */

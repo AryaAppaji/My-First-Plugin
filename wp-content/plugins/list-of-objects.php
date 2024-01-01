@@ -1,7 +1,7 @@
 <?php
     /**
      * Plugin Name: Test List of objects API
-     * Description: This is used to test the GET API
+     * Description: This is used to test the GET List of Objects API
      * Author: Arya Appaji
      * Version: 1.0
      */
