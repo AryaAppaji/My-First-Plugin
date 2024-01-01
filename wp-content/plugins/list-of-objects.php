@@ -13,5 +13,5 @@
         ob_end_flush();
     }
 
-    add_shortcode("get-specific", "get_response");
+    add_shortcode("list-objects", "get_response");
 ?>
