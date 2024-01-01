@@ -6,12 +6,12 @@
      * Version: 1.0
      */
     
-    function get_response(){
+    function get_specific_response(){
         ob_start();
         $data = wp_remote_retrieve_body(wp_remote_get('https://api.restful-api.dev/objects/7'));
         echo $data;
         ob_end_flush();
     }
 
-    add_shortcode("get-specific", "get_response");
+    add_shortcode("get-specific", "get_specific_response");
 ?>
