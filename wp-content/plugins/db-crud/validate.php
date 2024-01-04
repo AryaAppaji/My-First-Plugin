@@ -5,8 +5,12 @@ function validateAndStore(){
             $name = $_POST["name"];
             $email = $_POST["email"];
             global $wpdb;
-            $wpdb->query("INSERT INTO $wpdb->prefix.db_crud VALUES($name, $email)");
-        } 
+            $query = $wpdb->query("INSERT INTO $wpdb->prefix.db_crud VALUES($name, $email)");
+            if($query){
+                return true;
+            }
+        }
     }
 }
+
 ?>

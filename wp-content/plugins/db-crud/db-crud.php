@@ -16,22 +16,23 @@
                 `email` VARCHAR(30),
             )");
         }
-        public function selectOption(){
+        public function selectOptions(){
             ob_start();
-            echo "<select name = 'option' id='opt'>
+            echo "<select name = 'option' id='opt'  onchange='show_form()'>
+                <option value = 'none'>None</option>
                 <option value = 'create'>Create</option>
                 <option value = 'read'>Read</option>
                 <option value = 'update'>Update</option>
                 <option value = 'delete'>Delete</option>
-            </select>";
+            </select><br>";
             ob_end_flush();
         }
 
         public function showDbCrudForm(){
             ob_start();
-            echo "<form action='' method='post' id='crud-form' style='display:none' onchange='show_form()'>
-            <input type = 'text' name='name'><br><br>
-            <input type = 'email' name='email'><br><br>
+            echo "<form action='' method='post' id='crud-form' style='display:none'>
+            <input type = 'text' name='name' placeholder = 'Enter Name'><br><br>
+            <input type = 'email' name='email' placeholder = 'Enter Email'><br><br>
             <input type = 'submit' value='Submit'>
             </form>";
             ob_end_flush();
@@ -41,8 +42,8 @@
 
      $obj = new DbCrud();
      
-     add_shortcode("options", "selectOptions");
-     add_shortcode("form", "showDbCrudForm");
+     add_shortcode("options", array($obj, "selectOptions"));
+     add_shortcode("form", array($obj,"showDbCrudForm"));
 ?>
 <script>
     function show_form(){
@@ -52,8 +53,11 @@
         if(op.value == "create"){
             cForm.style.display = "block";
             <?php
-                include_once"validate.php";
-                validateAndStore();
+                include_once "validate.php";
+                $result = validateAndStore();
+                if($result){
+                    echo "Data inserted successfully";
+                }
             ?>
         }
     }
