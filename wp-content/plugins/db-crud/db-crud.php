@@ -60,5 +60,8 @@
                 }
             ?>
         }
+        else{
+            cForm.style.display = "none";
+        }
     }
 </script>
